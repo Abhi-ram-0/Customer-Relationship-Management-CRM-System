@@ -1,0 +1,9 @@
+CREATE TABLE Payments (
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    opportunity_id INT,
+    amount DECIMAL(10, 2),
+    payment_date TIMESTAMP,
+    payment_method VARCHAR(50),  -- e.g., 'Credit Card', 'Bank Transfer'
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (opportunity_id) REFERENCES Opportunities(opportunity_id)
+);
