@@ -1,0 +1,6 @@
+SELECT c.customer_name, cl.communication_type, cl.communication_description, cl.communication_date
+FROM Customers c
+JOIN Communication_Logs cl ON c.customer_id = cl.customer_id
+WHERE cl.communication_date = (SELECT MAX(communication_date) 
+                                FROM Communication_Logs 
+                                WHERE customer_id = c.customer_id);
