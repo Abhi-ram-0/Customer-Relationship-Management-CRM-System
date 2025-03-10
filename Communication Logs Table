@@ -1,0 +1,9 @@
+CREATE TABLE Communication_Logs (
+    log_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    communication_type VARCHAR(50),  -- e.g., 'Phone', 'Email', 'Meeting'
+    communication_description TEXT,
+    communication_date TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+);
