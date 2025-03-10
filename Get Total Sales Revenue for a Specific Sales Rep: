@@ -1,0 +1,5 @@
+SELECT sr.sales_rep_name, SUM(o.opportunity_value) AS total_revenue
+FROM Opportunities o
+JOIN Sales_Reps sr ON o.sales_rep_id = sr.sales_rep_id
+WHERE o.status = 'Won'  -- Filter by opportunities that are won
+GROUP BY sr.sales_rep_name;
