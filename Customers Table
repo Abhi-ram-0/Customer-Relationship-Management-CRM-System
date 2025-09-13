@@ -4,7 +4,7 @@ CREATE TABLE Customers (
     email VARCHAR(255),
     phone VARCHAR(15),
     address TEXT,
-    segmentation VARCHAR(50),  -- e.g., 'Lead', 'Prospect', 'Customer'
-    status VARCHAR(50),  -- e.g., 'Active', 'Inactive'
+    segmentation VARCHAR(50),  
+    status VARCHAR(50), 
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
